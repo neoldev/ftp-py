@@ -9,6 +9,14 @@ To get started, run the following command:
 py ftp_server.py
 ```
 
+## Getting started
+To get started, run the following command:
+
+```bash
+# Start the server
+py ftp_server.py
+```
+
 Once connected should look like this from the client:
 
 ```bash

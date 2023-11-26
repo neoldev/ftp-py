@@ -7,7 +7,6 @@ import socket
 
 class MyHandler(FTPHandler):
     def on_file_received(self, file):
-        # This method is called when a file is successfully received
         print(f"File '{file}' has been received and stored on the server.")
 
 def get_ip_address():
@@ -35,7 +34,7 @@ def create_ftp_server():
     handler.authorizer = authorizer
     
     # Create the FTP server with the handler and listen on a specific address and port
-    server = FTPServer(("0.0.0.0", 21), handler)
+    server = FTPServer(("127.0.0.1", 21), handler)
     
     # Add a signal handler to quit the server on Ctrl+C
     signal.signal(signal.SIGINT, lambda signum, frame: server.stop())

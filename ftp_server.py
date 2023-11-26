@@ -37,7 +37,7 @@ def create_ftp_server():
     # Create the FTP server with the handler and listen on a specific address and port
     server = FTPServer(("0.0.0.0", 21), handler)
     
-    # Add a signal handler to gracefully quit the server on Ctrl+C
+    # Add a signal handler to quit the server on Ctrl+C
     signal.signal(signal.SIGINT, lambda signum, frame: server.stop())
 
     return server
@@ -47,8 +47,8 @@ def add_users(authorizer):
     # perm=elr to read
     # perm=adfmwMT to write
     user_data = [
-        {"username": "admin", "password": "admin", "directory": r"./server", "perm": "elradfmwMT"},
-        {"username": "someuser", "password": "12345", "directory": r"server\ftp\users\someuser", "perm": "elr"},
+        {"username": "admin", "password": "admin", "directory": r"C:\Coding\ftp-py", "perm": "elradfmwMT"},
+        {"username": "someuser", "password": "12345", "directory": r"C:\Coding\ftp-py\users\someuser", "perm": "elr"},
         # Add more users as needed
     ]
 
